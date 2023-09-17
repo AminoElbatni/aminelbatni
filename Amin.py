@@ -369,4 +369,4 @@ def m4(ids,names,passlist):
         loop+=1
 
 
-AMIN
+AMIN')'
